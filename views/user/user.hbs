@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    {{>navBar}}
+
+    <h1>USER</h1>
+
+    <article class="form">
+      {{#if hasProducts}}
+        {{#each products as |product|}}
+          <div class="product">
+            <h1>{{product.name}}</h1>
+            <img src="{{product.image}}" />
+            <h3>Description:</h3>{{product.description}}
+            <h3>Price: </h3>{{product.price}}
+
+            <button>ADD TO CART</button>
+
+          </div>
+        {{/each}}
+      {{else}}
+        <h1>No Products</h1>
+      {{/if}}
+    </article>
+  </body>
+</html>
